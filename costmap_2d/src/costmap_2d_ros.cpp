@@ -106,8 +106,10 @@ Costmap2DROS::Costmap2DROS(std::string name, tf::TransformListener& tf) :
 
   layered_costmap_ = new LayeredCostmap(global_frame_, rolling_window, track_unknown_space);
 
+  ROS_INFO("***********************************************");
   if (!private_nh.hasParam("plugins"))
   {
+    ROS_INFO("OLD STYLE");
     resetOldParameters(private_nh);
   }
 
